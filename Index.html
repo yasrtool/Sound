@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Academic Examination: Phonetics & Phonology</title>
+    <style>
+        :root { --primary: #002b5b; --secondary: #c41e3a; --bg: #f8f9fa; }
+        body { font-family: 'Times New Roman', Times, serif; background: var(--bg); margin: 0; padding: 20px; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); border-top: 10px solid var(--primary); }
+        h1, h2 { text-align: center; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        .panel { display: none; }
+        .active { display: block; }
+        .input-group { margin-bottom: 20px; }
+        input[type="text"] { width: 100%; padding: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        .q-card { background: #fff; padding: 25px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 20px; }
+        .options { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        .opt-label { padding: 12px; border: 1px solid #eee; background: #fafafa; border-radius: 4px; cursor: pointer; transition: 0.2s; }
+        .opt-label:hover { background: #f0f4f8; border-color: var(--primary); }
+        .status-bar { display: flex; justify-content: space-between; font-weight: bold; background: #e9ecef; padding: 15px; border-radius: 4px; margin-bottom: 20px; color: var(--primary); }
+        #progress { height: 10px; background: #ddd; border-radius: 5px; overflow: hidden; margin-bottom: 20px; }
+        #progress-bar { height: 100%; background: var(--primary); width: 0%; transition: 0.3s; }
+        button { background: var(--primary); color: white; border: none; padding: 15px 30px; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; font-weight: bold; }
+        button:hover { background: #001a38; }
+        .review-card { padding: 15px; margin-bottom: 10px; border-left: 5px solid; border-radius: 3px; }
+        .wrong { border-color: #dc3545; background: #fff5f5; }
+        .correct { border-color: #28a745; background: #f5fff5; }
+        .summary-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .stat { text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Al-Mustaqbal University</h1>
+        <h2>Department of English - Phonology Examination</h2>
+        <p style="text-align: center;">Academic Year 2025-2026 | Time: 60 Minutes</p>
+    </header>
+
+    <div id="registration" class="panel active">
+        <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px;">Student Information System</h3>
+        <div class="input-group">
+            <label>Full Student Name (As per registration):</label>
+            <input type="text" id="studentName" placeholder="Enter your full name">
+        </div>
+        <div class="input-group">
+            <label>Academic ID Number:</label>
+            <input type="text" id="studentID" placeholder="Enter your ID">
+        </div>
+        <button onclick="initExam()">VALIDATE & COMMENCE EXAMINATION</button>
+    </div>
+
+    <div id="exam-panel" class="panel">
+        <div class="status-bar">
+            <span id="timer">Time Remaining: 60:00</span>
+            <span id="q-count">Question 1 of 75</span>
+        </div>
+        <div id="progress"><div id="progress-bar"></div></div>
+        <div id="question-area"></div>
+        <button id="next-btn" onclick="processAnswer()">SUBMIT RESPONSE & CONTINUE</button>
+    </div>
+
+    <div id="results-panel" class="panel">
+        <h2>Academic Performance Evaluation</h2>
+        <div id="summary" class="summary-box"></div>
+        <hr>
+        <h3>Detailed Error Analysis & Correction</h3>
+        <div id="review-area"></div>
+        <button onclick="location.reload()" style="background: #6c757d;">RESTART EXAM</button>
+    </div>
+</div>
+
+<script>
+    const examQuestions = [
+        // MCQs (1-50) based on Source 1 & 2
+        { q: "Regarding the velo-pharyngeal mechanism, what occurs when the velum is in a lowered position during speech production?", o: ["Air passes through oral cavity for oral sounds", "Air passes through nasal cavity for nasal sounds", "Complete closure of the glottis", "Vocal cords cease vibration"], a: 1 },
+        { q: "Phonetic properties are characterized by being:", o: ["Categorical", "Gradient", "Abstract", "Mental"], a: 1 },
+        { q: "Phonology studies speech sounds as a system that is:", o: ["Concrete and Physical", "Abstract and Autonomous", "Biological and Anatomical", "Gradient and Measurable"], a: 1 },
+        { q: "Which tool is scientifically utilized to measure speech sound properties in the field of Phonetics?", o: ["Morphogram", "Spectrogram", "Stethogram", "Audiogram"], a: 1 },
+        { q: "The term 'Dialect' refers to a specific variety of a language that exhibits variations in:", o: ["Pronunciation only", "Grammar and Vocabulary only", "Grammar, Vocabulary, and Pronunciation", "Regional accent only"], a: 2 },
+        { q: "Identify the articulator categorized as 'Passive' or 'Fixed':", o: ["Velum", "Alveolar ridge", "Mandible", "Vocal cords"], a: 1 },
+        { q: "The flexible muscular tissue of the tongue is divided into how many distinct parts for phonetic analysis?", o: ["Three", "Four", "Five", "Six"], a: 3 },
+        { q: "Sounds produced when the back of the tongue touches the velum are classified as:", o: ["Dental", "Alveolar", "Velar", "Bilabial"], a: 2 },
+        { q: "What is the technical anatomical designation for the 'Lower Jaw'?", o: ["Maxilla", "Mandible", "Thyroid", "Cricoid"], a: 1 },
+        { q: "Vowels are considered the 'centre of the syllable' primarily because they are more ______ than consonants:", o: ["Obstruent", "Sonorant", "Peripheral", "Voiceless"], a: 1 },
+        { q: "In the classification of the vowel /u:/, which set of parameters is accurate?", o: ["Front-close rounded", "Back-close rounded", "Central-open spread", "Front-open spread"], a: 1 },
+        { q: "Triphthongs are structurally composed of a closing diphthong plus which phoneme?", o: ["/i:/", "/u:/", "/ə/", "/æ/"], a: 2 },
+        { q: "The Larynx is a cartilaginous box comprising which three specific cartilages?", o: ["Thyroid, Mandible, Cricoid", "Thyroid, Arytenoid, Cricoid", "Arytenoid, Mandible, Velum", "Alveolar, Palatal, Dental"], a: 1 },
+        { q: "Perceptual correlation of frequency is technically defined as:", o: ["Loudness", "Pitch", "Quality", "Intensity"], a: 1 },
+        { q: "The 'ingressive pulmonic air stream mechanism' is associated with which biological phase?", o: ["Expiration", "Inspiration", "Phonation", "Articulation"], a: 1 },
+        { q: "Which phonation mode is produced when the glottis is 'Triangular' in shape?", o: ["Breathy", "Normal", "Creaky", "Whispering"], a: 3 },
+        { q: "Loudness depends on subglottal air pressure (Psg) and the ______ movement of the larynx:", o: ["Lateral", "Upward/Downward", "Static", "Circular"], a: 1 },
+        { q: "The sound /p/ is classified via a three-term label as:", o: ["Voiced-bilabial-stop", "Voiceless-bilabial-stop", "Voiceless-dental-fricative", "Voiced-velar-nasal"], a: 1 },
+        { q: "Manner of articulation including 'stops/plosives/explosives' is technically defined as:", o: ["Approximant", "Obstruent occlusive", "Lateral sonorant", "Nasal resonance"], a: 1 },
+        { q: "Fortis plosives /p, t, k/ are characterized as:", o: ["Voiced and Weak", "Voiceless and Strong", "Nasal and Long", "Lateral and Soft"], a: 1 },
+        { q: "In the production of plosives, the 'Compression phase' involves air being built up behind the closure due to the:", o: ["Lowering of the velum", "Raising of the velum", "Vibration of vocal cords", "Tongue root retraction"], a: 1 },
+        { q: "Aspiration in initial fortis plosives is identified by which diacritic placement?", o: ["Small circle below", "Diacritic 'h' on top right", "Inverted triangle", "Small 'v' on top"], a: 1 },
+        { q: "What phonetic phenomenon occurs to vowels when they are immediately followed by fortis plosives?", o: ["Nasalization", "Lengthening", "Clipping (shortening)", "Voicing"], a: 2 },
+        { q: "The sound /ŋ/ is classified as a:", o: ["Voiceless-dental-fricative", "Voiced-velar-nasal", "Voiced-post alveolar-fricative", "Voiceless-bilabial-stop"], a: 1 },
+        { q: "Identify the 'Affricate' sound from the following:", o: ["/s/", "/p/", "/tʃ/", "/m/"], a: 2 },
+        { q: "Pitch is measured in scientific units known as:", o: ["Decibels (dB)", "Cycles per second (Hz)", "Amperes (A)", "Watts (W)"], a: 1 },
+        { q: "Received Pronunciation (RP) in Britain is associated with:", o: ["Rural dialects", "Public school and BBC English", "Cockney working class", "Scouse regionalism"], a: 1 },
+        { q: "Which articulator is responsible for the Velo-pharyngeal mechanism?", o: ["Hard Palate", "Velum", "Teeth", "Alveolar ridge"], a: 1 },
+        { q: "Vowels are classified by the part of the tongue raised, the degree of raising, and the:", o: ["State of vocal cords", "Shape of the lips", "Subglottal pressure", "Nasal resonance"], a: 1 },
+        { q: "The 'blade' of the tongue is one of how many parts?", o: ["2", "4", "6", "8"], a: 2 },
+        { q: "Oral sounds are produced when the velum is:", o: ["Lowered", "Raised", "Static", "Vibrating"], a: 1 },
+        { q: "The sound /ð/ is classified as:", o: ["Voiceless-dental-fricative", "Voiced-dental-fricative", "Voiced-alveolar-stop", "Voiceless-velar-nasal"], a: 1 },
+        { q: "Which phase of plosive production involves moving two articulators against each other for complete closure?", o: ["Closure phase", "Compression phase", "Release phase", "Post-release phase"], a: 0 },
+        { q: "When /p/ is preceded by /s/ (e.g., /spi:k/), the fortis plosive:", o: ["Becomes aspirated", "Loses aspiration", "Becomes voiced", "Is clipped"], a: 1 },
+        { q: "Voiced consonants become ______ when preceded by fortis plosives:", o: ["Nasalized", "Devoiced", "Aspirated", "Longer"], a: 1 },
+        { q: "The 'Schwa' sound /ə/ is categorized as a:", o: ["Long vowel", "Short vowel", "Closing diphthong", "Triphthong"], a: 1 },
+        { q: "Regional accent refers to variation associated with:", o: ["Educational background", "Locale (rural/urban)", "Social class", "National groups"], a: 1 },
+        { q: "The sound /j/ is a:", o: ["Voiced-velar-nasal", "Voiced-palatal-approximant", "Voiceless-glottal-fricative", "Voiced-dental-stop"], a: 1 },
+        { q: "Quality of voice is affected by the shape of the ______ pulse:", o: ["Subglottal", "Transglottal", "Supraglottal", "Nasal"], a: 1 },
+        { q: "The Diaphragm moves ______ during the inspiration process:", o: ["Upward", "Downward", "Inward", "Outward"], a: 1 },
+        { q: "Centring diphthongs are defined by gliding toward:", o: ["The close position", "The centre (/ə/)", "The front position", "The back position"], a: 1 },
+        { q: "Pure vowels are subdivided into:", o: ["Oral and Nasal", "Short and Long", "Voiced and Voiceless", "Fortis and Lenis"], a: 1 },
+        { q: "The vowel /e/ is classified as:", o: ["Back-close", "Front-between close-mid and open-mid", "Central-open", "Back-open-mid"], a: 1 },
+        { q: "Which sound is an 'Alveolar'?", o: ["/p/", "/f/", "/t/", "/k/"], a: 2 },
+        { q: "Loudness depends on Psg and the movement of the:", o: ["Tongue", "Larynx", "Velum", "Lips"], a: 1 },
+        { q: "The term 'Concrete' or 'Physical' in relation to Phonetics means it links sounds to:", o: ["Abstract rules", "The human body", "Cultural background", "Mental patterns"], a: 1 },
+        { q: "Social accent is a marker of class in which countries?", o: ["Iraq and Syria", "India and Japan", "USA and Canada", "Australia and NZ"], a: 1 },
+        { q: "The 'anterior end termination of the oral cavity' refers to the:", o: ["Uvula", "Lips", "Pharynx", "Trachea"], a: 1 },
+        { q: "Lenis plosives /b, d, g/ are ______ when they are initial or final:", o: ["Aspirated", "Devoiced", "Nasalized", "Lengthened"], a: 1 },
+        { q: "Phonological distinctions are described as being:", o: ["Gradient", "Categorical", "Physical", "Measurable"], a: 1 },
+
+        // True/False (51-75)
+        { q: "Phonology analyzes sound patterns, rules, and constraints in a given language.", o: ["True", "False"], a: 0 },
+        { q: "Phonetics uses scientific tools such as ultrasound and X-ray.", o: ["True", "False"], a: 0 },
+        { q: "Accent includes differences in grammar and vocabulary.", o: ["True", "False"], a: 1 },
+        { q: "BBC English and Queen's English are examples of social accents in Britain.", o: ["True", "False"], a: 0 },
+        { q: "The hard palate is a movable (active) articulator.", o: ["True", "False"], a: 1 },
+        { q: "All vowels are voiced sounds.", o: ["True", "False"], a: 0 },
+        { q: "Consonants are the centre of the syllable.", o: ["True", "False"], a: 1 },
+        { q: "Velo-pharyngeal mechanism is used for opening and closing the nasal cavity.", o: ["True", "False"], a: 0 },
+        { q: "There is no obstruction to the air flow during vowel production.", o: ["True", "False"], a: 0 },
+        { q: "The vocal cords vibrate to produce voiceless sounds.", o: ["True", "False"], a: 1 },
+        { q: "The mandible helps adjust the size and shape of the oral cavity.", o: ["True", "False"], a: 0 },
+        { q: "Phonetic properties are categorical, while phonological distinctions are gradient.", o: ["True", "False"], a: 1 },
+        { q: "The larynx is attached to the top of the trachea.", o: ["True", "False"], a: 0 },
+        { q: "Expiration is called the ingressive pulmonic air stream mechanism.", o: ["True", "False"], a: 1 },
+        { q: "All vowels are oral except nasalized ones.", o: ["True", "False"], a: 0 },
+        { q: "The vowel /i:/ is a short vowel.", o: ["True", "False"], a: 1 },
+        { q: "Diphthongs are gliding of one pure vowel to another.", o: ["True", "False"], a: 0 },
+        { q: "Triphthongs are composed of a closing diphthong plus /ə/.", o: ["True", "False"], a: 0 },
+        { q: "Intensity is measured by the amplitude or size of the sound wave.", o: ["True", "False"], a: 0 },
+        { q: "Fortis plosives are voiced and weak.", o: ["True", "False"], a: 1 },
+        { q: "Aspiration is identified by placing a circle below the plosive.", o: ["True", "False"], a: 1 },
+        { q: "Vowels are clipped when followed by lenis plosives.", o: ["True", "False"], a: 1 },
+        { q: "The sound /l/ is a lateral consonant.", o: ["True", "False"], a: 0 },
+        { q: "The alveolar ridge is located behind the upper front teeth.", o: ["True", "False"], a: 0 },
+        { q: "The tongue has four extrinsic muscles to help it move freely.", o: ["True", "False"], a: 0 }
+    ];
+
+    let currentIdx = 0;
+    let score = 0;
+    let userAnswers = [];
+    let timer;
+    let timeLeft = 3600;
+
+    function initExam() {
+        const name = document.getElementById('studentName').value;
+        const id = document.getElementById('studentID').value;
+        if(!name || !id) return alert("Please complete registration fields.");
+        
+        document.getElementById('registration').classList.remove('active');
+        document.getElementById('exam-panel').classList.add('active');
+        
+        shuffle(examQuestions);
+        renderQuestion();
+        startTimer();
+    }
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function renderQuestion() {
+        const q = examQuestions[currentIdx];
+        document.getElementById('q-count').innerText = `Question ${currentIdx + 1} of 75`;
+        document.getElementById('progress-bar').style.width = `${(currentIdx/75)*100}%`;
+        
+        let html = `<div class="q-card"><h3>${q.q}</h3><div class="options">`;
+        q.o.forEach((opt, i) => {
+            html += `<label class="opt-label"><input type="radio" name="choice" value="${i}"> ${opt}</label>`;
+        });
+        html += `</div></div>`;
+        document.getElementById('question-area').innerHTML = html;
+    }
+
+    function processAnswer() {
+        const selected = document.querySelector('input[name="choice"]:checked');
+        if(!selected) return alert("You must provide a response to proceed.");
+        
+        userAnswers.push(parseInt(selected.value));
+        if(parseInt(selected.value) === examQuestions[currentIdx].a) score++;
+
+        currentIdx++;
+        if(currentIdx < examQuestions.length) renderQuestion();
+        else finalizeExam();
+    }
+
+    function startTimer() {
+        timer = setInterval(() => {
+            timeLeft--;
+            let m = Math.floor(timeLeft/60), s = timeLeft%60;
+            document.getElementById('timer').innerText = `Time Remaining: ${m}:${s<10?'0'+s:s}`;
+            if(timeLeft <= 0) finalizeExam();
+        }, 1000);
+    }
+
+    function finalizeExam() {
+        clearInterval(timer);
+        document.getElementById('exam-panel').classList.remove('active');
+        document.getElementById('results-panel').classList.add('active');
+
+        document.getElementById('summary').innerHTML = `
+            <div class="stat"><strong>Student</strong><br>${document.getElementById('studentName').value}</div>
+            <div class="stat"><strong>Final Score</strong><br>${score} / 75</div>
+            <div class="stat"><strong>Percentage</strong><br>${((score/75)*100).toFixed(1)}%</div>
+        `;
+
+        let reviewHtml = "";
+        examQuestions.forEach((q, i) => {
+            const statusClass = userAnswers[i] === q.a ? 'correct' : 'wrong';
+            reviewHtml += `<div class="review-card ${statusClass}">
+                <p><strong>Q${i+1}: ${q.q}</strong></p>
+                <p style="color:#d9534f">Your Selection: ${q.o[userAnswers[i]]}</p>
+                <p style="color:#5cb85c">Academic Correct Answer: ${q.o[q.a]}</p>
+            </div>`;
+        });
+        document.getElementById('review-area').innerHTML = reviewHtml;
+    }
+</script>
+</body>
+</html>
