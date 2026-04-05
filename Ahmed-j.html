@@ -300,6 +300,272 @@ function submit(){
 
 function startTimer(){
   ti=setInterval(function(){
+    sc--.qbody{width:100%;max-width:720px;margin:0 auto;padding:22px 16px}
+.qnav{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:18px}
+.dot{width:26px;height:26px;border-radius:5px;background:#172012;border:1px solid #2a3828;cursor:pointer;font-size:10px;font-weight:700;color:#8a8070;display:flex;align-items:center;justify-content:center}
+.dot:hover{border-color:#c8973a;color:#c8973a}
+.dot.done{background:#40916c;border-color:#40916c;color:#fff}
+.dot.cur{border-color:#c8973a;color:#c8973a}
+.qcard{background:#111a14;border:1px solid #2a3828;border-radius:12px;padding:24px;margin-bottom:16px}
+.qn{font-size:11px;color:#52b788;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.qt{font-size:16px;line-height:1.7;margin-bottom:18px;direction:ltr;text-align:left}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:center;gap:11px;background:#172012;border:1px solid #2a3828;border-radius:8px;padding:11px 14px;cursor:pointer;transition:all .2s;direction:ltr;text-align:left}
+.opt:hover{border-color:#40916c}
+.opt.sel{border-color:#c8973a;background:rgba(200,150,50,.08)}
+.ol{width:24px;height:24px;border-radius:5px;background:#2a3828;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#8a8070;flex-shrink:0}
+.opt.sel .ol{background:#c8973a;color:#000}
+.ot{font-size:13px;line-height:1.5}
+.acts{display:flex;gap:9px;justify-content:flex-end;direction:ltr}
+.btnp,.btnn,.btns{padding:10px 20px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;border:none}
+.btnp{background:#172012;color:#8a8070;border:1px solid #2a3828}
+.btnn{background:#2d6a4f;color:#fff}
+.btnn:hover{background:#40916c}
+.btns{background:linear-gradient(135deg,#c8973a,#e6b84a);color:#000;font-weight:700}
+.rbox{max-width:720px;width:100%;padding:20px}
+.rhdr{text-align:center;margin-bottom:28px}
+.rhdr h2{font-size:28px;color:#c8973a;margin-bottom:6px}
+.rname{font-size:16px;color:#52b788;margin-bottom:18px}
+.ring{width:130px;height:130px;border-radius:50%;margin:0 auto 14px;border:4px solid #2a3828;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#111a14}
+.rp{font-size:34px;font-weight:900;color:#c8973a}
+.ro{font-size:11px;color:#8a8070}
+.gb{display:inline-block;padding:6px 22px;border-radius:18px;font-size:16px;font-weight:700;margin:10px auto}
+.sr{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.sc{background:#111a14;border:1px solid #2a3828;border-radius:10px;padding:14px 20px;text-align:center;min-width:100px}
+.sv{font-size:28px;font-weight:700}
+.sl{font-size:10px;color:#8a8070;letter-spacing:.5px;margin-top:2px}
+.sc.c .sv{color:#40916c}
+.sc.w .sv{color:#c0392b}
+.rtitle{font-size:16px;color:#c8973a;margin:22px 0 10px;border-bottom:1px solid #2a3828;padding-bottom:8px}
+.ri{background:#111a14;border:1px solid #2a3828;border-radius:10px;margin-bottom:10px;overflow:hidden}
+.riq{padding:13px 15px;font-size:13px;line-height:1.6;border-bottom:1px solid #2a3828;direction:ltr;text-align:left}
+.riq span{color:#52b788;font-weight:600;font-size:11px;display:block;margin-bottom:3px}
+.ria{padding:10px 15px;display:flex;flex-direction:column;gap:5px}
+.ra{display:flex;gap:7px;align-items:flex-start;font-size:12px;padding:5px 9px;border-radius:6px;direction:ltr;text-align:left}
+.ra.c{background:rgba(64,145,108,.12);border:1px solid rgba(64,145,108,.25)}
+.ra.w{background:rgba(192,57,43,.09);border:1px solid rgba(192,57,43,.25)}
+.rla{font-weight:600;font-size:10px;flex-shrink:0;padding-top:1px}
+.rexp{padding:11px 15px;background:rgba(200,150,50,.04);border-top:1px solid #2a3828}
+.een{font-size:12px;color:#8a8070;line-height:1.7;margin-bottom:5px;direction:ltr;text-align:left}
+.ear{font-size:13px;color:#52b788;line-height:1.8;direction:rtl;text-align:right}
+</style>
+</head>
+<body>
+
+<div id="lg" class="scr on">
+<div class="box">
+  <div class="logo">
+    <div class="badge">Dijlah University &middot; College of Pharmacy</div>
+    <h1>Pharmacognosy I</h1>
+    <p>Stage 2 &middot; Lecture 1 &middot; 84 MCQ</p>
+    <p style="color:#52b788;font-size:13px;margin-top:4px">اختبار علم العقاقير &ndash; المحاضرة الأولى</p>
+  </div>
+  <label>الاسم الثلاثي &ndash; Full Name (Three Parts)</label>
+  <input type="text" id="nm" placeholder="مثال: أحمد محمد علي" autocomplete="off">
+  <div class="chk-box">
+    <input type="checkbox" id="tg">
+    <label>أؤكد اشتراكي في قناة تيليجرام &nbsp;|&nbsp; I confirm joining the Telegram channel<br>
+    <a href="https://t.me/vgsscwe" target="_blank">@vgsscwe</a></label>
+  </div>
+  <button class="btn-main" onclick="goStart()">ابدأ الاختبار &middot; Start Quiz</button>
+  <div class="err-msg" id="em">يرجى إدخال الاسم الثلاثي وتأكيد الاشتراك</div>
+</div>
+</div>
+
+<div id="qz" class="scr" style="justify-content:flex-start;padding:0">
+  <div class="hdr">
+    <div class="brand">Pharmacognosy I &ndash; Lec 1</div>
+    <div class="hdr-r">
+      <div class="qnum" id="qc">Q 1 / 84</div>
+      <div class="tmr" id="tm">90:00</div>
+    </div>
+  </div>
+  <div class="pbar"><div class="pfill" id="pf" style="width:0%"></div></div>
+  <div class="qbody">
+    <div class="qnav" id="nav"></div>
+    <div class="qcard" id="qcard"></div>
+    <div class="acts">
+      <button class="btnp" id="bp" onclick="mv(-1)">&larr; Prev</button>
+      <button class="btnn" id="bn" onclick="mv(1)">Next &rarr;</button>
+      <button class="btns" id="bs" style="display:none" onclick="submit()">Submit &#10003;</button>
+    </div>
+  </div>
+</div>
+
+<div id="rs" class="scr">
+  <div class="rbox">
+    <div class="rhdr">
+      <h2>نتائج الاختبار &middot; Quiz Results</h2>
+      <div class="rname" id="rn"></div>
+      <div class="ring"><div class="rp" id="rp"></div><div class="ro" id="ro"></div></div>
+      <div class="gb" id="gb"></div>
+      <div class="sr">
+        <div class="sc c"><div class="sv" id="rc"></div><div class="sl">&#10003; صحيح</div></div>
+        <div class="sc w"><div class="sv" id="rw"></div><div class="sl">&#10007; خاطئ</div></div>
+        <div class="sc"><div class="sv" id="rsk"></div><div class="sl">&mdash; متروك</div></div>
+      </div>
+    </div>
+    <div class="rtitle">الأجوبة الخاطئة &amp; التفسير</div>
+    <div id="rl"></div>
+  </div>
+</div>
+
+<script>
+var Q=[
+{q:"What is pharmacognosy primarily defined as?",o:["Study of synthetic drugs","Study of natural substances mainly plants used in medicine","Study of bacterial infections","Study of human physiology"],a:1,en:"Pharmacognosy is the study of those natural substances, principally plants, that find use in medicine.",ar:"\u0639\u0644\u0645 \u0627\u0644\u0639\u0642\u0627\u0642\u064a\u0631 \u0647\u0648 \u062f\u0631\u0627\u0633\u0629 \u0627\u0644\u0645\u0648\u0627\u062f \u0627\u0644\u0637\u0628\u064a\u0639\u064a\u0629\u060c \u0648\u0628\u0635\u0648\u0631\u0629 \u0631\u0626\u064a\u0633\u064a\u0629 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a\u060c \u0627\u0644\u062a\u064a \u062a\u064f\u0633\u062a\u062e\u062f\u0645 \u0641\u064a \u0627\u0644\u0637\u0628."},
+{q:"From which language is the word pharmacognosy derived?",o:["Latin","Arabic","Greek","German"],a:2,en:"The word pharmacognosy is derived from the Greek words Pharmacon and gnosis.",ar:"\u0643\u0644\u0645\u0629 \u0641\u0627\u0631\u0645\u0627\u0643\u0648\u063a\u0646\u0648\u0633\u064a \u0645\u0634\u062a\u0642\u0629 \u0645\u0646 \u0627\u0644\u0643\u0644\u0645\u062a\u064a\u0646 \u0627\u0644\u064a\u0648\u0646\u0627\u0646\u064a\u062a\u064a\u0646: Pharmacon \u0648gnosis."},
+{q:"What does the Greek word Pharmacon mean?",o:["Knowledge","A drug","A plant","A cure"],a:1,en:"Pharmacon is the Greek word meaning a drug.",ar:"Pharmacon \u0647\u064a \u0627\u0644\u0643\u0644\u0645\u0629 \u0627\u0644\u064a\u0648\u0646\u0627\u0646\u064a\u0629 \u0627\u0644\u062a\u064a \u062a\u0639\u0646\u064a \u062f\u0648\u0627\u0621."},
+{q:"What does the Greek word gnosis mean?",o:["To prepare","To synthesize","To acquire knowledge of","To treat"],a:2,en:"The Greek word gnosis means to acquire knowledge of.",ar:"gnosis \u062a\u0639\u0646\u064a \u0627\u0643\u062a\u0633\u0627\u0628 \u0627\u0644\u0645\u0639\u0631\u0641\u0629 \u062d\u0648\u0644."},
+{q:"Which animal product is traditionally included in pharmacognosy?",o:["Penicillin","Beeswax","Aspirin","Caffeine"],a:1,en:"Animal products included in pharmacognosy include beeswax, gelatin, and wool fat.",ar:"\u0645\u0646 \u0627\u0644\u0645\u0646\u062a\u062c\u0627\u062a \u0627\u0644\u062d\u064a\u0648\u0627\u0646\u064a\u0629: \u0634\u0645\u0639 \u0627\u0644\u0646\u062d\u0644 \u0648\u0627\u0644\u062c\u064a\u0644\u0627\u062a\u064a\u0646 \u0648\u062f\u0647\u0646 \u0627\u0644\u0635\u0648\u0641."},
+{q:"Which is also included in pharmacognosy alongside plants?",o:["Fossil fuels","Marine organisms","Synthetic compounds","Radioactive isotopes"],a:1,en:"Natural products such as antibiotics, hormones, and marine organisms may also be involved.",ar:"\u062a\u0634\u0645\u0644 \u0645\u0648\u0627\u062f \u0639\u0644\u0645 \u0627\u0644\u0639\u0642\u0627\u0642\u064a\u0631 \u0623\u064a\u0636\u0627 \u0627\u0644\u0645\u0636\u0627\u062f\u0627\u062a \u0627\u0644\u062d\u064a\u0648\u064a\u0629 \u0648\u0627\u0644\u0647\u0631\u0645\u0648\u0646\u0627\u062a \u0648\u0627\u0644\u0643\u0627\u0626\u0646\u0627\u062a \u0627\u0644\u0628\u062d\u0631\u064a\u0629."},
+{q:"Due to modern isolation techniques new plant drugs enter medicine as:",o:["Raw plant powders","Galenical preparations","Purified substances","Fermented extracts"],a:2,en:"Modern isolation techniques mean new plant drugs find their way into medicine as purified substances.",ar:"\u062a\u0642\u0646\u064a\u0627\u062a \u0627\u0644\u0639\u0632\u0644 \u0627\u0644\u062d\u062f\u064a\u062b\u0629 \u062a\u062c\u0639\u0644 \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0627\u0644\u0646\u0628\u0627\u062a\u064a\u0629 \u062a\u062f\u062e\u0644 \u0627\u0644\u0637\u0628 \u0643\u0645\u0648\u0627\u062f \u0646\u0642\u064a\u0629."},
+{q:"Which is one of the nine subjects pharmacognosy is concerned with?",o:["Synthesis of hormones","Taxonomy of plants and natural drug sources","Manufacture of radioactive tracers","Design of synthetic analgesics"],a:1,en:"One of the nine subjects is the taxonomy of plants and the natural sources of drugs.",ar:"\u0645\u0646 \u0627\u0644\u0645\u0648\u0636\u0648\u0639\u0627\u062a \u0627\u0644\u062a\u0633\u0639\u0629: \u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0648\u0627\u0644\u0645\u0635\u0627\u062f\u0631 \u0627\u0644\u0637\u0628\u064a\u0639\u064a\u0629 \u0644\u0644\u0623\u062f\u0648\u064a\u0629."},
+{q:"The cardioactive glycoside digitoxin is stored in which part of Digitalis?",o:["Root","Bark","Leaf","Seed"],a:2,en:"Digitalis leaf contains the natural cardioactive glycoside digitoxin.",ar:"\u0648\u0631\u0642\u0629 \u0627\u0644\u062f\u064a\u062c\u064a\u062a\u0627\u0644\u064a\u0633 \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0627\u0644\u063a\u0644\u064a\u0643\u0648\u0633\u064a\u062f \u0627\u0644\u0642\u0644\u0628\u064a \u062f\u064a\u062c\u064a\u062a\u0648\u0643\u0633\u064a\u0646."},
+{q:"The active constituents of Liquorice are stored in its:",o:["Leaves","Bark","Seeds","Roots"],a:3,en:"Liquorice stores its active constituents in its roots.",ar:"\u064a\u062e\u0632\u0646 \u0639\u0631\u0642 \u0627\u0644\u0633\u0648\u0633 \u0645\u0643\u0648\u0646\u0627\u062a\u0647 \u0627\u0644\u0641\u0639\u0627\u0644\u0629 \u0641\u064a \u062c\u0630\u0648\u0631\u0647."},
+{q:"Coffee bean active constituents are stored in:",o:["Roots","Leaves","Seeds","Bark"],a:2,en:"Coffee bean active constituents are stored in seeds.",ar:"\u062d\u0628\u0648\u0628 \u0627\u0644\u0628\u0646 \u0645\u062b\u0627\u0644 \u0639\u0644\u0649 \u062f\u0648\u0627\u0621 \u062a\u062e\u0632\u0646 \u0645\u0643\u0648\u0646\u0627\u062a\u0647 \u0641\u064a \u0627\u0644\u0628\u0630\u0648\u0631."},
+{q:"Which plant has active constituents stored in bark?",o:["Digitalis","Coffee","Liquorice","Cinnamon"],a:3,en:"Cinnamon is an example of a drug whose active constituents are stored in bark.",ar:"\u0627\u0644\u0642\u0631\u0641\u0629 \u0645\u062b\u0627\u0644 \u0639\u0644\u0649 \u062f\u0648\u0627\u0621 \u062a\u062e\u0632\u0646 \u0645\u0643\u0648\u0646\u0627\u062a\u0647 \u0641\u064a \u0627\u0644\u0642\u0634\u0631\u0629."},
+{q:"Which is listed as an active constituent from natural sources?",o:["Aspirin","Alkaloids","Paracetamol","Ibuprofen"],a:1,en:"Active constituents include Glycosides, Alkaloids, Volatile Oils, and Tannins.",ar:"\u062a\u0634\u0645\u0644 \u0627\u0644\u0645\u0643\u0648\u0646\u0627\u062a \u0627\u0644\u0641\u0639\u0627\u0644\u0629: \u0627\u0644\u063a\u0644\u064a\u0643\u0648\u0633\u064a\u062f\u0627\u062a \u0648\u0627\u0644\u0642\u0644\u0648\u064a\u062f\u0627\u062a \u0648\u0627\u0644\u0632\u064a\u0648\u062a \u0627\u0644\u0637\u064a\u0627\u0631\u0629 \u0648\u0627\u0644\u0639\u0641\u0635."},
+{q:"Taxonomy is the science dealing with:",o:["Drug synthesis","Description identification nomenclature and classification of organisms","Pharmacological testing","Storage of crude drugs"],a:1,en:"Taxonomy is the science that deals with description, identification, nomenclature, and classification of organisms.",ar:"\u0639\u0644\u0645 \u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u064a\u062a\u0639\u0627\u0645\u0644 \u0645\u0639 \u0648\u0635\u0641 \u0627\u0644\u0643\u0627\u0626\u0646\u0627\u062a \u0648\u062a\u062d\u062f\u064a\u062f \u0647\u0648\u064a\u062a\u0647\u0627 \u0648\u062a\u0633\u0645\u064a\u062a\u0647\u0627 \u0648\u062a\u0635\u0646\u064a\u0641\u0647\u0627."},
+{q:"In binomial nomenclature the first part refers to:",o:["Species","Family","Genus","Order"],a:2,en:"The first part of the binomial name is the genus; the second part is the species.",ar:"\u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u0623\u0648\u0644 \u0641\u064a \u0627\u0644\u062a\u0633\u0645\u064a\u0629 \u0627\u0644\u062b\u0646\u0627\u0626\u064a\u0629 \u0647\u0648 \u0627\u0644\u062c\u0646\u0633\u060c \u0648\u0627\u0644\u062c\u0632\u0621 \u0627\u0644\u062b\u0627\u0646\u064a \u0647\u0648 \u0627\u0644\u0646\u0648\u0639."},
+{q:"In Papaver somniferum which part is the species name?",o:["Papaver","somniferum","Papaveraceae","Both"],a:1,en:"In Papaver somniferum, somniferum is the species name.",ar:"\u0641\u064a Papaver somniferum\u060c \u0643\u0644\u0645\u0629 somniferum \u0647\u064a \u0627\u0633\u0645 \u0627\u0644\u0646\u0648\u0639."},
+{q:"The family of Papaver somniferum is:",o:["Solanaceae","Labiateae","Papaveraceae","Umbelliferae"],a:2,en:"Papaver somniferum belongs to the family Papaveraceae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u062e\u0634\u062e\u0627\u0634 \u0625\u0644\u0649 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0627\u0644\u062e\u0634\u062e\u0627\u0634\u064a\u0629 Papaveraceae."},
+{q:"A pharmacopeia is:",o:["A botanical catalog","A book with official list of drugs with preparation and use","A chemical formula database","A taxonomy textbook"],a:1,en:"A pharmacopeia is a book containing an official list of medicinal drugs with articles on preparation and use.",ar:"\u062f\u0633\u062a\u0648\u0631 \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0643\u062a\u0627\u0628 \u064a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0642\u0627\u0626\u0645\u0629 \u0631\u0633\u0645\u064a\u0629 \u0628\u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0645\u0639 \u0645\u0642\u0627\u0644\u0627\u062a \u062d\u0648\u0644 \u062a\u062d\u0636\u064a\u0631\u0647\u0627."},
+{q:"What does B.P. stand for?",o:["Botanical Pharmacology","Biogenetic Products","British Pharmacopeia","Biochemical Properties"],a:2,en:"B.P. stands for British Pharmacopeia.",ar:"B.P. \u0627\u062e\u062a\u0635\u0627\u0631 \u0644\u0640 British Pharmacopeia."},
+{q:"What does U.S.P. stand for?",o:["United Science Publication","United States Pharmacopeia","Universal Standard Preparations","Unified Synthetic Products"],a:1,en:"U.S.P. stands for United States Pharmacopeia.",ar:"U.S.P. \u0627\u062e\u062a\u0635\u0627\u0631 \u0644\u0640 United States Pharmacopeia."},
+{q:"A crude drug is intended for:",o:["Lab experimentation only","Diagnosis cure mitigation or prevention of disease","Commercial sale without medical use","Synthesis of artificial compounds"],a:1,en:"A crude drug is intended for use in the diagnosis, cure, mitigation, or prevention of disease.",ar:"\u0627\u0644\u062f\u0648\u0627\u0621 \u0627\u0644\u062e\u0627\u0645 \u0645\u062e\u0635\u0635 \u0644\u062a\u0634\u062e\u064a\u0635 \u0627\u0644\u0645\u0631\u0636 \u0623\u0648 \u0639\u0644\u0627\u062c\u0647 \u0623\u0648 \u062a\u062e\u0641\u064a\u0641\u0647 \u0623\u0648 \u0627\u0644\u0648\u0642\u0627\u064a\u0629 \u0645\u0646\u0647."},
+{q:"Crude natural drugs undergo only the process of:",o:["Synthesis and purification","Fermentation and distillation","Collection and drying","Hydrogenation and extraction"],a:2,en:"Natural crude drugs undergo only the process of collection and drying.",ar:"\u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0627\u0644\u062e\u0627\u0645 \u062a\u062e\u0636\u0639 \u0641\u0642\u0637 \u0644\u0639\u0645\u0644\u064a\u062a\u064a \u0627\u0644\u062c\u0645\u0639 \u0648\u0627\u0644\u062a\u062c\u0641\u064a\u0641."},
+{q:"Indigenous plants are those that:",o:["Are imported","Grow in their native countries","Are cultivated in labs","Are endangered"],a:1,en:"Indigenous plants are those plants which grow in their native countries.",ar:"\u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0627\u0644\u0623\u0635\u064a\u0644\u0629 \u0647\u064a \u062a\u0644\u0643 \u0627\u0644\u062a\u064a \u062a\u0646\u0645\u0648 \u0641\u064a \u0628\u0644\u062f\u0627\u0646\u0647\u0627 \u0627\u0644\u0623\u0635\u0644\u064a\u0629."},
+{q:"Digitalis purpurea is indigenous to:",o:["North America","Asia","Central and Southern Europe","Australia"],a:2,en:"Digitalis purpurea is indigenous to central and southern Europe.",ar:"\u0646\u0628\u0627\u062a \u0627\u0644\u062f\u064a\u062c\u064a\u062a\u0627\u0644\u064a\u0633 \u0623\u0635\u064a\u0644 \u0641\u064a \u0648\u0633\u0637 \u0648\u062c\u0646\u0648\u0628 \u0623\u0648\u0631\u0648\u0628\u0627."},
+{q:"Naturalized plants grow in:",o:["Their native countries","A foreign land other than their native homes","Controlled lab conditions","Marine environments only"],a:1,en:"Naturalized plants are those which grow in foreign land other than their native homes.",ar:"\u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0627\u0644\u0645\u062a\u0623\u0642\u0644\u0645\u0629 \u062a\u0646\u0645\u0648 \u0641\u064a \u0623\u0631\u0636 \u0623\u062c\u0646\u0628\u064a\u0629 \u063a\u064a\u0631 \u0645\u0648\u0637\u0646\u0647\u0627 \u0627\u0644\u0623\u0635\u0644\u064a."},
+{q:"Which plant is an example of a naturalized plant in the USA?",o:["Mentha piperita","Datura stramonium","Papaver somniferum","Digitalis purpurea"],a:1,en:"Datura stramonium was introduced into the United States from Europe.",ar:"\u0627\u0644\u062f\u0627\u062a\u0648\u0631\u0629 \u0623\u062f\u062e\u0644\u062a \u0625\u0644\u0649 \u0627\u0644\u0648\u0644\u0627\u064a\u0627\u062a \u0627\u0644\u0645\u062a\u062d\u062f\u0629 \u0645\u0646 \u0623\u0648\u0631\u0648\u0628\u0627."},
+{q:"Cultivated plants grow under certain conditions to improve their:",o:["Color and scent","Quality and quantity of production","Toxicity","Genetic stability"],a:1,en:"Cultivated plants grow under certain conditions to improve their quality and quantity of production.",ar:"\u062a\u0646\u0645\u0648 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0627\u0644\u0645\u0632\u0631\u0648\u0639\u0629 \u0644\u062a\u062d\u0633\u064a\u0646 \u0646\u0648\u0639\u064a\u062a\u0647\u0627 \u0648\u0643\u0645\u064a\u0629 \u0625\u0646\u062a\u0627\u062c\u0647\u0627."},
+{q:"Opium is an example of which type of plant?",o:["Indigenous","Naturalized","Cultivated","Medicinal only"],a:2,en:"Opium is cultivated to improve drug quality or due to insufficient natural supply.",ar:"\u0627\u0644\u0623\u0641\u064a\u0648\u0646 \u0645\u062b\u0627\u0644 \u0644\u0644\u0646\u0628\u0627\u062a \u0627\u0644\u0645\u0632\u0631\u0648\u0639 \u0644\u062a\u062d\u0633\u064a\u0646 \u062c\u0648\u062f\u0629 \u0627\u0644\u062f\u0648\u0627\u0621."},
+{q:"Medicinal plants contain:",o:["Radioactive isotopes","Active constituents with pharmacological or physiological activity","Artificial colorings","Inert compounds only"],a:1,en:"Medicinal plants contain active constituents with pharmacological properties or physiological activities.",ar:"\u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0627\u0644\u0637\u0628\u064a\u0629 \u062a\u062d\u062a\u0648\u064a \u0639\u0644\u0649 \u0645\u0643\u0648\u0646\u0627\u062a \u0641\u0639\u0627\u0644\u0629 \u0630\u0627\u062a \u062e\u0635\u0627\u0626\u0635 \u062f\u0648\u0627\u0626\u064a\u0629 \u0623\u0648 \u0646\u0634\u0627\u0637\u0627\u062a \u0641\u0633\u064a\u0648\u0644\u0648\u062c\u064a\u0629."},
+{q:"In alphabetical classification which pharmacopeia uses Latin names?",o:["B.P.","U.S.P.","U.P. European Pharmacopeia","N.F."],a:2,en:"U.P. uses Latin names while B.P. and U.S.P. use English names.",ar:"\u062a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0641\u0627\u0631\u0645\u0627\u0643\u0648\u0628\u064a\u0627 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a\u0629 \u0627\u0644\u0623\u0633\u0645\u0627\u0621 \u0627\u0644\u0644\u0627\u062a\u064a\u0646\u064a\u0629."},
+{q:"Morphological classification groups drugs according to:",o:["Their pharmacological action","Plant parts like leaves roots bark seeds","Alphabetical order","Chemical constituents"],a:1,en:"In morphological classification, drugs are grouped according to plant parts.",ar:"\u0641\u064a \u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u0645\u0648\u0631\u0641\u0648\u0644\u0648\u062c\u064a\u060c \u062a\u062c\u0645\u0639 \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0648\u0641\u0642 \u0623\u062c\u0632\u0627\u0621 \u0627\u0644\u0646\u0628\u0627\u062a."},
+{q:"Rhubarb is grouped under which morphological category?",o:["Leaves","Seeds","Rhizomes and roots","Bark"],a:2,en:"Rhubarb is grouped under rhizomes and root.",ar:"\u064a\u0635\u0646\u0641 \u0627\u0644\u0631\u0627\u0648\u0646\u062f \u0636\u0645\u0646 \u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0631\u064a\u0632\u0648\u0645\u0627\u062a \u0648\u0627\u0644\u062c\u0630\u0648\u0631."},
+{q:"Mustard is grouped under which morphological category?",o:["Bark","Seeds","Rhizomes","Leaves"],a:1,en:"Mustard is grouped under seeds.",ar:"\u064a\u0635\u0646\u0641 \u0627\u0644\u062e\u0631\u062f\u0644 \u0636\u0645\u0646 \u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0628\u0630\u0648\u0631."},
+{q:"Cinnamon is grouped under which morphological category?",o:["Leaves","Seeds","Rhizomes","Bark"],a:3,en:"Cinnamon is grouped under bark.",ar:"\u062a\u0635\u0646\u0641 \u0627\u0644\u0642\u0631\u0641\u0629 \u0636\u0645\u0646 \u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0642\u0634\u0648\u0631."},
+{q:"In taxonomic classification drugs are arranged in:",o:["Alphabetical order","Classes orders families genera and species","Pharmacological action groups","Latin names only"],a:1,en:"In taxonomic classification, drugs are arranged in classes, orders, families, genera and species.",ar:"\u0641\u064a \u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u062a\u0635\u0646\u064a\u0641\u064a\u060c \u062a\u0631\u062a\u0628 \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0641\u064a \u0631\u062a\u0628 \u0648\u0639\u0627\u0626\u0644\u0627\u062a \u0648\u0623\u062c\u0646\u0627\u0633 \u0648\u0623\u0646\u0648\u0627\u0639."},
+{q:"Belladonna and Stramonium are classified under:",o:["Labiateae","Papaveraceae","Solanaceae","Umbelliferae"],a:2,en:"Belladonna and stramonium are classified under Solanaceae family.",ar:"\u062a\u0635\u0646\u0641 \u0627\u0644\u0628\u064a\u0644\u0627\u062f\u0648\u0646\u0627 \u0648\u0627\u0644\u0627\u0633\u062a\u0631\u0627\u0645\u0648\u0646\u064a \u062a\u062d\u062a \u0639\u0627\u0626\u0644\u0629 Solanaceae."},
+{q:"Pharmacological classification groups drugs according to:",o:["Plant parts","Alphabetical order","Pharmacological action or therapeutic use","Country of origin"],a:2,en:"Pharmacological classification involves grouping drugs according to their pharmacological action or therapeutic use.",ar:"\u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u062f\u0648\u0627\u0626\u064a \u064a\u062c\u0645\u0639 \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0648\u0641\u0642 \u062a\u0623\u062b\u064a\u0631\u0647\u0627 \u0627\u0644\u062f\u0648\u0627\u0626\u064a."},
+{q:"Cascara sagrada Senna and castor oil are grouped as:",o:["Analgesics","Antibiotics","Cathartics laxatives","Antihistamines"],a:2,en:"They are grouped according to their action on intestine as cathartics.",ar:"\u062a\u062c\u0645\u0639 \u0647\u0630\u0647 \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0644\u062a\u0623\u062b\u064a\u0631\u0647\u0627 \u0639\u0644\u0649 \u0627\u0644\u0623\u0645\u0639\u0627\u0621 \u0648\u0627\u0633\u062a\u062e\u062f\u0627\u0645\u0647\u0627 \u0643\u0645\u0633\u0647\u0644\u0627\u062a."},
+{q:"Clove nutmeg and peppermint are grouped together because they share:",o:["Alkaloids","Tannins","Volatile oil","Glycosides"],a:2,en:"Clove, nutmeg, and peppermint are grouped according to their volatile oil content.",ar:"\u062a\u062c\u0645\u0639 \u0648\u0641\u0642 \u0645\u062d\u062a\u0648\u0627\u0647\u0627 \u0645\u0646 \u0627\u0644\u0632\u064a\u0648\u062a \u0627\u0644\u0637\u064a\u0627\u0631\u0629."},
+{q:"Chemical or Biogenetic classification divides drugs based on:",o:["Alphabetical order","Morphological parts","Chemical constituents or biosynthetic pathway","Geographic distribution"],a:2,en:"Chemical or Biogenetic classification divides drugs according to chemical constituents or biosynthetic pathway.",ar:"\u064a\u0642\u0633\u0645 \u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u0643\u064a\u0645\u064a\u0627\u0626\u064a \u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0648\u0641\u0642 \u0645\u0643\u0648\u0646\u0627\u062a\u0647\u0627 \u0627\u0644\u0643\u064a\u0645\u064a\u0627\u0626\u064a\u0629."},
+{q:"Who first described the binomial system of plant nomenclature?",o:["Aristotle","Darwin","Linnaeus","Pasteur"],a:2,en:"Linnaeus (1707-1778), a Swedish biologist, was the first to describe the binomial system.",ar:"\u0644\u064a\u0646\u064a\u0648\u0633 (1707-1778)\u060c \u0639\u0627\u0644\u0645 \u0627\u0644\u0623\u062d\u064a\u0627\u0621 \u0627\u0644\u0633\u0648\u064a\u062f\u064a\u060c \u0648\u0635\u0641 \u0627\u0644\u0646\u0638\u0627\u0645 \u0627\u0644\u062b\u0646\u0627\u0626\u064a \u0644\u0623\u0648\u0644 \u0645\u0631\u0629."},
+{q:"What is the nationality of Linnaeus?",o:["German","British","Swedish","French"],a:2,en:"Linnaeus was a Swedish biologist who lived from 1707 to 1778.",ar:"\u0643\u0627\u0646 \u0644\u064a\u0646\u064a\u0648\u0633 \u0639\u0627\u0644\u0645 \u0623\u062d\u064a\u0627\u0621 \u0633\u0648\u064a\u062f\u064a."},
+{q:"When did Linnaeus live?",o:["1607-1678","1707-1778","1807-1878","1507-1578"],a:1,en:"Linnaeus lived from 1707 to 1778.",ar:"\u0639\u0627\u0634 \u0644\u064a\u0646\u064a\u0648\u0633 \u0645\u0646 1707 \u0625\u0644\u0649 1778."},
+{q:"In botanical nomenclature the genus name starts with:",o:["A small letter","A capital letter","A number","An abbreviation"],a:1,en:"The genus name starts with a capital letter while specific names use small initial letters.",ar:"\u064a\u0628\u062f\u0623 \u0627\u0633\u0645 \u0627\u0644\u062c\u0646\u0633 \u0628\u062d\u0631\u0641 \u0643\u0628\u064a\u0631 \u0628\u064a\u0646\u0645\u0627 \u062a\u0643\u062a\u0628 \u0627\u0644\u0623\u0633\u0645\u0627\u0621 \u0627\u0644\u0646\u0648\u0639\u064a\u0629 \u0628\u062d\u0631\u0648\u0641 \u0635\u063a\u064a\u0631\u0629."},
+{q:"In Mentha piperita Linnaeus what does Linnaeus indicate?",o:["The plant family","Country of origin","Botanist who first described the species","Therapeutic use"],a:2,en:"The name Linnaeus refers to the botanist who first described the species.",ar:"\u064a\u0634\u064a\u0631 \u0627\u0633\u0645 \u0644\u064a\u0646\u064a\u0648\u0633 \u0625\u0644\u0649 \u0639\u0627\u0644\u0645 \u0627\u0644\u0646\u0628\u0627\u062a \u0627\u0644\u0630\u064a \u0648\u0635\u0641 \u0627\u0644\u0646\u0648\u0639 \u0644\u0623\u0648\u0644 \u0645\u0631\u0629."},
+{q:"According to Englers scheme the Division of peppermint is:",o:["Gymnospermae","Angiospermae","Pteridophyta","Bryophyta"],a:1,en:"Peppermint belongs to Division Angiospermae in Englers scheme.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0642\u0633\u0645 \u0643\u0627\u0633\u064a\u0627\u062a \u0627\u0644\u0628\u0630\u0648\u0631 Angiospermae."},
+{q:"What is the Class of peppermint in Englers scheme?",o:["Monocotyledoneae","Gymnospermae","Dicotyledoneae","Sympetalae"],a:2,en:"Peppermint belongs to the Class Dicotyledoneae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0635\u0646\u0641 \u062b\u0646\u0627\u0626\u064a\u0627\u062a \u0627\u0644\u0641\u0644\u0642\u0629 Dicotyledoneae."},
+{q:"The Subclass of peppermint in Englers scheme is:",o:["Tubiflorae","Verbenineae","Sympetalae","Stachdoideae"],a:2,en:"Peppermint belongs to the Subclass Sympetalae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0627\u0644\u0635\u0646\u0641 \u0627\u0644\u0641\u0631\u0639\u064a Sympetalae."},
+{q:"The Order of peppermint in Englers scheme is:",o:["Verbenineae","Tubiflorae","Satureieae","Sympetalae"],a:1,en:"Peppermint belongs to the Order Tubiflorae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0627\u0644\u0631\u062a\u0628\u0629 Tubiflorae."},
+{q:"The Suborder of peppermint is:",o:["Tubiflorae","Sympetalae","Verbenineae","Satureieae"],a:2,en:"Peppermint belongs to Suborder Verbenineae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0627\u0644\u0631\u062a\u0628\u0629 \u0627\u0644\u0641\u0631\u0639\u064a\u0629 Verbenineae."},
+{q:"The Family of peppermint is:",o:["Solanaceae","Papaveraceae","Umbelliferae","Labiateae Lamiaceae"],a:3,en:"Peppermint belongs to the family Labiateae also known as Lamiaceae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0639\u0627\u0626\u0644\u0629 Labiateae (Lamiaceae)."},
+{q:"The Subfamily of peppermint is:",o:["Satureieae","Labiateae","Stachdoideae","Verbenineae"],a:2,en:"Peppermint belongs to Subfamily Stachdoideae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0627\u0644\u0641\u0631\u0639\u064a\u0629 Stachdoideae."},
+{q:"The Tribe of peppermint is:",o:["Tubiflorae","Stachdoideae","Satureieae","Verbenineae"],a:2,en:"Peppermint belongs to Tribe Satureieae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0625\u0644\u0649 \u0627\u0644\u0642\u0628\u064a\u0644\u0629 Satureieae."},
+{q:"The Genus of peppermint is:",o:["Piperita","Lamiaceae","Mentha","Stachdoideae"],a:2,en:"The genus of peppermint is Mentha.",ar:"\u062c\u0646\u0633 \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0647\u0648 Mentha."},
+{q:"The full species name of peppermint is:",o:["Mentha vulgaris","Mentha officinalis","Mentha piperita Linnaeus","Mentha lamiaceae"],a:2,en:"The species of peppermint is Mentha piperita Linnaeus.",ar:"\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0643\u0627\u0645\u0644 \u0644\u0646\u0648\u0639 \u0627\u0644\u0646\u0639\u0646\u0627\u0639: Mentha piperita Linnaeus."},
+{q:"White peppermint variety is:",o:["Mentha piperita var vulgaris","Mentha piperita var officinalis","Mentha piperita var alba","Mentha piperita var nigra"],a:1,en:"Mentha piperita var officinalis is white peppermint.",ar:"Mentha piperita var. officinalis \u0647\u0648 \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0627\u0644\u0623\u0628\u064a\u0636."},
+{q:"Black peppermint variety is:",o:["Mentha piperita var officinalis","Mentha piperita var nigra","Mentha piperita var vulgaris","Mentha piperita var spicata"],a:2,en:"Mentha piperita var vulgaris is black peppermint.",ar:"Mentha piperita var. vulgaris \u0647\u0648 \u0627\u0644\u0646\u0639\u0646\u0627\u0639 \u0627\u0644\u0623\u0633\u0648\u062f."},
+{q:"Which is a taxonomic character used to classify plants?",o:["Color preference","Morphological shape and structure","Economic value","Geographic proximity"],a:1,en:"Taxonomic characters include morphological, histological, embryological, serological, chemical, and genetic.",ar:"\u062a\u0634\u0645\u0644 \u0627\u0644\u0635\u0641\u0627\u062a \u0627\u0644\u062a\u0635\u0646\u064a\u0641\u064a\u0629: \u0627\u0644\u0645\u0648\u0631\u0641\u0648\u0644\u0648\u062c\u064a\u0629 \u0648\u0627\u0644\u0646\u0633\u064a\u062c\u064a\u0629 \u0648\u0627\u0644\u062c\u0646\u064a\u0646\u064a\u0629 \u0648\u0627\u0644\u0645\u0635\u0644\u064a\u0629 \u0648\u0627\u0644\u0643\u064a\u0645\u064a\u0627\u0626\u064a\u0629 \u0648\u0627\u0644\u062c\u064a\u0646\u064a\u0629."},
+{q:"Histological taxonomic characters involve studying:",o:["Genes and DNA","Tissues","Embryo development","Protein reactions"],a:1,en:"Histological characters involve studying the tissues of plants.",ar:"\u0627\u0644\u0635\u0641\u0627\u062a \u0627\u0644\u0646\u0633\u064a\u062c\u064a\u0629 \u062a\u062a\u0636\u0645\u0646 \u062f\u0631\u0627\u0633\u0629 \u0623\u0646\u0633\u062c\u0629 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a."},
+{q:"Embryological characters involve:",o:["Protein reactions","Tissue study","Development of the embryo","DNA characteristics"],a:2,en:"Embryological characters involve the development of the embryo.",ar:"\u0627\u0644\u0635\u0641\u0627\u062a \u0627\u0644\u062c\u0646\u064a\u0646\u064a\u0629 \u062a\u062a\u0636\u0645\u0646 \u062a\u0637\u0648\u0631 \u0627\u0644\u062c\u0646\u064a\u0646."},
+{q:"Serological taxonomic characters involve:",o:["Morphological shape","Tissue study","Embryo development","Protein reactions"],a:3,en:"Serological characters involve protein reactions.",ar:"\u0627\u0644\u0635\u0641\u0627\u062a \u0627\u0644\u0645\u0635\u0644\u064a\u0629 \u062a\u062a\u0636\u0645\u0646 \u062a\u0641\u0627\u0639\u0644\u0627\u062a \u0627\u0644\u0628\u0631\u0648\u062a\u064a\u0646."},
+{q:"A convenience classification groups plants based on:",o:["Evolutionary relationships","Similar visible features","Identical DNA","Same geographic origin"],a:1,en:"In a convenience classification plants are grouped because they share similar visible features.",ar:"\u0641\u064a \u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u0631\u0627\u062d\u0629\u060c \u062a\u062c\u0645\u0639 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0644\u0627\u0634\u062a\u0631\u0627\u0643\u0647\u0627 \u0641\u064a \u0635\u0641\u0627\u062a \u0645\u0631\u0626\u064a\u0629 \u0645\u062a\u0634\u0627\u0628\u0647\u0629."},
+{q:"Modern techniques in chemical taxonomy span the last:",o:["25 years","50 years","75 years","100 years"],a:2,en:"In the last 75 years modern isolation techniques have led to chemical screening of thousands of plants.",ar:"\u0641\u064a \u0627\u0644\u0633\u0646\u0648\u0627\u062a \u0627\u0644\u0640 75 \u0627\u0644\u0623\u062e\u064a\u0631\u0629\u060c \u0623\u062f\u062a \u062a\u0642\u0646\u064a\u0627\u062a \u0627\u0644\u0639\u0632\u0644 \u0625\u0644\u0649 \u0641\u062d\u0635 \u0643\u064a\u0645\u064a\u0627\u0626\u064a \u0644\u0622\u0644\u0627\u0641 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a."},
+{q:"In chemical taxonomy useful characters are chemicals with:",o:["Universal distribution","Intermediate distribution not all not one","Restriction to one species","Synthetic origin"],a:1,en:"Characters used should have intermediate distribution neither in all plants nor restricted to one.",ar:"\u064a\u062c\u0628 \u0623\u0646 \u062a\u062a\u0645\u062a\u0639 \u0627\u0644\u0645\u0648\u0627\u062f \u0628\u062a\u0648\u0632\u064a\u0639 \u0645\u062a\u0648\u0633\u0637 \u0641\u064a \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0646\u0628\u0627\u062a\u064a\u0629."},
+{q:"Why are essential amino acids not useful in chemical taxonomy?",o:["They are toxic","They are found in almost all plants","They are too expensive","They decompose rapidly"],a:1,en:"Essential amino acids are found in almost all plants so they lack the intermediate distribution needed.",ar:"\u0627\u0644\u0623\u062d\u0645\u0627\u0636 \u0627\u0644\u0623\u0645\u064a\u0646\u064a\u0629 \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629 \u062a\u0648\u062c\u062f \u0641\u064a \u0643\u0644 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u062a\u0642\u0631\u064a\u0628\u0627 \u0641\u0644\u0627 \u062a\u0635\u0644\u062d \u0644\u0644\u062a\u0635\u0646\u064a\u0641."},
+{q:"The alkaloid coniine is found only in:",o:["Papaver somniferum","Digitalis purpurea","Conium maculatum","Mentha piperita"],a:2,en:"Coniine is found only in Conium maculatum.",ar:"\u064a\u0648\u062c\u062f \u0627\u0644\u0642\u0644\u0648\u064a\u062f \u0643\u0648\u0646\u064a\u064a\u0646 \u0641\u0642\u0637 \u0641\u064a Conium maculatum."},
+{q:"Conium maculatum belongs to the family:",o:["Solanaceae","Papaveraceae","Umbelliferae","Labiateae"],a:2,en:"Conium maculatum belongs to the family Umbelliferae.",ar:"\u064a\u0646\u062a\u0645\u064a \u0627\u0644\u0643\u0648\u0646\u064a\u0648\u0645 \u0625\u0644\u0649 \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0627\u0644\u062e\u064a\u0645\u064a\u0629 Umbelliferae."},
+{q:"Scientists in chemical taxonomy mainly study:",o:["Primary metabolites","Secondary metabolites alkaloids flavonoids glycosides","Essential amino acids","Common sugars"],a:1,en:"Scientists mainly study secondary metabolites such as alkaloids, flavonoids, and glycosides.",ar:"\u064a\u062f\u0631\u0633 \u0627\u0644\u0639\u0644\u0645\u0627\u0621 \u0628\u0635\u0648\u0631\u0629 \u0631\u0626\u064a\u0633\u064a\u0629 \u0627\u0644\u0645\u0633\u062a\u0642\u0644\u0628\u0627\u062a \u0627\u0644\u062b\u0627\u0646\u0648\u064a\u0629 \u0643\u0627\u0644\u0642\u0644\u0648\u064a\u062f\u0627\u062a \u0648\u0627\u0644\u0641\u0644\u0627\u0641\u0648\u0646\u0648\u064a\u062f\u0627\u062a."},
+{q:"Modern chemical taxonomy also uses:",o:["Fossil records","DNA characteristics and specific proteins","Physical weight","Morphological shape only"],a:1,en:"Recently chemical taxonomy uses molecular characters such as DNA, specific proteins, and amino acid sequences.",ar:"\u064a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u062a\u0635\u0646\u064a\u0641 \u0627\u0644\u062d\u062f\u064a\u062b \u062e\u0635\u0627\u0626\u0635 \u0627\u0644\u062d\u0645\u0636 \u0627\u0644\u0646\u0648\u0648\u064a \u0648\u0627\u0644\u0628\u0631\u0648\u062a\u064a\u0646\u0627\u062a."},
+{q:"The majority of medicinal plants are derived from:",o:["Gymnospermae","Algae","Spermatophyta","Bryophyta"],a:2,en:"The majority of medicinal plants are derived from Spermatophyta.",ar:"\u062a\u0634\u062a\u0642 \u063a\u0627\u0644\u0628\u064a\u0629 \u0627\u0644\u0646\u0628\u0627\u062a\u0627\u062a \u0627\u0644\u062f\u0648\u0627\u0626\u064a\u0629 \u0645\u0646 \u0627\u0644\u0628\u0630\u0631\u064a\u0627\u062a Spermatophyta."},
+{q:"Gymnospermae yields which useful products?",o:["Tannins and glycosides","Oils resins and the alkaloid ephedrine","Marine polysaccharides","Antibiotic compounds"],a:1,en:"Gymnospermae yields some useful oils, resins, and the alkaloid ephedrine.",ar:"\u062a\u0646\u062a\u062c \u0639\u0627\u0631\u064a\u0627\u062a \u0627\u0644\u0628\u0630\u0648\u0631 \u0632\u064a\u0648\u062a\u0627 \u0648\u0631\u0627\u062a\u0646\u062c\u0627\u062a \u0648\u0627\u0644\u0642\u0644\u0648\u064a\u062f \u0627\u0644\u0625\u064a\u0641\u064a\u062f\u0631\u064a\u0646."},
+{q:"Angiospermae is divided into:",o:["Gymnospermae and Pteridophyta","Monocotyledons and Dicotyledons","Algae and Fungi","Ferns and Mosses"],a:1,en:"Angiospermae is divided into monocotyledons and dicotyledons.",ar:"\u062a\u0646\u0642\u0633\u0645 \u0643\u0627\u0633\u064a\u0627\u062a \u0627\u0644\u0628\u0630\u0648\u0631 \u0625\u0644\u0649 \u0623\u062d\u0627\u062f\u064a\u0627\u062a \u0648\u062b\u0646\u0627\u0626\u064a\u0627\u062a \u0627\u0644\u0641\u0644\u0642\u0629."},
+{q:"Which group of Angiospermae provides more useful drugs?",o:["Monocotyledons","Dicotyledons","Both equally","Neither"],a:1,en:"Both provide useful drugs but especially the dicotyledons.",ar:"\u062a\u0646\u062a\u062c \u0643\u0644\u062a\u0627\u0647\u0645\u0627 \u0623\u062f\u0648\u064a\u0629\u060c \u0644\u0643\u0646 \u062b\u0646\u0627\u0626\u064a\u0627\u062a \u0627\u0644\u0641\u0644\u0642\u0629 \u0647\u064a \u0627\u0644\u0623\u0643\u062b\u0631."},
+{q:"Fungi are especially important in pharmacy for:",o:["Volatile oils","Antibiotics","Vitamins","Marine polysaccharides"],a:1,en:"The fungi provide a number of useful drugs especially antibiotics.",ar:"\u062a\u0648\u0641\u0631 \u0627\u0644\u0641\u0637\u0631\u064a\u0627\u062a \u0623\u062f\u0648\u064a\u0629 \u0645\u0641\u064a\u062f\u0629\u060c \u0648\u062e\u0627\u0635\u0629 \u0627\u0644\u0645\u0636\u0627\u062f\u0627\u062a \u0627\u0644\u062d\u064a\u0648\u064a\u0629."},
+{q:"Algae provide which substances?",o:["Ephedrine","Digitoxin","Agar","Gelatin"],a:2,en:"Algae are a source of limited substances such as agar and alginic acid.",ar:"\u0627\u0644\u0637\u062d\u0627\u0644\u0628 \u0645\u0635\u062f\u0631 \u0644\u0639\u062f\u062f \u0645\u062d\u062f\u0648\u062f \u0645\u0646 \u0627\u0644\u0645\u0648\u0627\u062f \u0645\u062b\u0644 \u0627\u0644\u0623\u062c\u0627\u0631 \u0648\u062d\u0645\u0636 \u0627\u0644\u0623\u0644\u062c\u064a\u0646\u064a\u0643."},
+{q:"Lichens and mosses contribute to medicine:",o:["Significantly","As main antibiotic source","Very little","As primary alkaloid source"],a:2,en:"Lichens and mosses contribute little to medicine.",ar:"\u062a\u0633\u0647\u0645 \u0627\u0644\u0623\u0634\u0646\u0627\u062a \u0648\u0627\u0644\u0637\u062d\u0627\u0644\u0628 \u0642\u0644\u064a\u0644\u0627 \u0641\u064a \u0627\u0644\u0637\u0628."},
+{q:"Which traditional material is provided by land animals?",o:["Agar","Ephedrine","Gelatin","Coniine"],a:2,en:"Land animals provide traditional pharmaceutical materials such as gelatin, wool fat, and beeswax.",ar:"\u062a\u0648\u0641\u0631 \u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0627\u0644\u0628\u0631\u064a\u0629 \u0645\u0648\u0627\u062f \u0635\u064a\u062f\u0644\u0627\u0646\u064a\u0629 \u062a\u0642\u0644\u064a\u062f\u064a\u0629 \u0645\u062b\u0644 \u0627\u0644\u062c\u064a\u0644\u0627\u062a\u064a\u0646."},
+{q:"Land animals are a source of:",o:["Antibiotics and agar","Hormones vitamins and sera","Volatile oils","Tannins and glycosides"],a:1,en:"Land animals are a source of hormones, vitamins, and sera.",ar:"\u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0627\u0644\u0628\u0631\u064a\u0629 \u0645\u0635\u062f\u0631 \u0644\u0644\u0647\u0631\u0645\u0648\u0646\u0627\u062a \u0648\u0627\u0644\u0641\u064a\u062a\u0627\u0645\u064a\u0646\u0627\u062a \u0648\u0627\u0644\u0623\u0645\u0635\u0627\u0644."},
+{q:"Bacteria are used as a source for:",o:["Volatile oils","Production of antibiotics and genetic engineering","Producing tannins","Raw vegetable drugs"],a:1,en:"Bacteriophyta is a source for antibiotics and is employed in genetic engineering.",ar:"\u0627\u0644\u0628\u0643\u062a\u064a\u0631\u064a\u0627 \u0645\u0635\u062f\u0631 \u0644\u0625\u0646\u062a\u0627\u062c \u0627\u0644\u0645\u0636\u0627\u062f\u0627\u062a \u0627\u0644\u062d\u064a\u0648\u064a\u0629 \u0648\u0627\u0644\u0647\u0646\u062f\u0633\u0629 \u0627\u0644\u0648\u0631\u0627\u062b\u064a\u0629."},
+{q:"Which product is made via genetic engineering using bacteria?",o:["Penicillin","Human insulin","Digitoxin","Morphine"],a:1,en:"Bacteria are employed in genetic engineering for the production of human insulin.",ar:"\u062a\u0633\u062a\u062e\u062f\u0645 \u0627\u0644\u0628\u0643\u062a\u064a\u0631\u064a\u0627 \u0641\u064a \u0627\u0644\u0647\u0646\u062f\u0633\u0629 \u0627\u0644\u0648\u0631\u0627\u062b\u064a\u0629 \u0644\u0625\u0646\u062a\u0627\u062c \u0627\u0644\u0625\u0646\u0633\u0648\u0644\u064a\u0646 \u0627\u0644\u0628\u0634\u0631\u064a."},
+{q:"The European Pharmacopeia is abbreviated as:",o:["B.P.","U.S.P.","U.P.","N.F."],a:2,en:"The European Pharmacopeia is abbreviated as U.P.",ar:"\u0627\u0644\u0641\u0627\u0631\u0645\u0627\u0643\u0648\u0628\u064a\u0627 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a\u0629 \u062a\u062e\u062a\u0635\u0631 \u0628\u0640 U.P."},
+{q:"The National Formulary is abbreviated as:",o:["N.F.","N.P.","U.P.","G.F."],a:0,en:"The National Formulary is abbreviated as N.F.",ar:"\u0627\u0644\u0635\u064a\u063a\u0629 \u0627\u0644\u0648\u0637\u0646\u064a\u0629 \u062a\u062e\u062a\u0635\u0631 \u0628\u0640 N.F."},
+{q:"Salix is described as a:",o:["Shrub","Herb","Tree","Marine plant"],a:2,en:"Salix is described as a Tree.",ar:"\u0648\u0635\u0641 \u0627\u0644\u0635\u0641\u0635\u0627\u0641 Salix \u0628\u0623\u0646\u0647 \u0634\u062c\u0631\u0629."},
+{q:"Which plant is an example of a shrub?",o:["Salix","Catharanthus","Digitalis","Mentha"],a:1,en:"Catharanthus is given as an example of a shrub.",ar:"\u0627\u0644\u0643\u0627\u062b\u0627\u0631\u0627\u0646\u062b\u0648\u0633 \u0645\u062b\u0627\u0644 \u0639\u0644\u0649 \u0627\u0644\u0634\u062c\u064a\u0631\u0627\u062a."}
+];
+
+var T=Q.length,ci=0,an=new Array(T).fill(-1),sn="",sc=90*60,ti=null;
+
+function goStart(){
+  var v=document.getElementById('nm').value.trim();
+  var p=v.split(/\s+/).filter(function(x){return x.length>0;});
+  var c=document.getElementById('tg').checked;
+  var e=document.getElementById('em');
+  if(p.length<3||!c){e.style.display='block';return;}
+  e.style.display='none';
+  sn=v; showScreen('qz'); buildNav(); renderQ(); startTimer();
+}
+
+function showScreen(id){
+  ['lg','qz','rs'].forEach(function(s){
+    var el=document.getElementById(s);
+    el.classList.remove('on');
+  });
+  document.getElementById(id).classList.add('on');
+}
+
+function buildNav(){
+  var n=document.getElementById('nav'); n.innerHTML='';
+  for(var i=0;i<T;i++){
+    var d=document.createElement('div');
+    d.className='dot'+(i===ci?' cur':'');
+    d.id='d'+i; d.textContent=i+1;
+    (function(x){d.onclick=function(){ci=x;renderQ();};})(i);
+    n.appendChild(d);
+  }
+}
+
+function updateNav(){
+  for(var i=0;i<T;i++){
+    var d=document.getElementById('d'+i);
+    if(d) d.className='dot'+(an[i]!==-1?' done':'')+(i===ci?' cur':'');
+  }
+}
+
+function renderQ(){
+  var q=Q[ci];
+  document.getElementById('qc').textContent='Q '+(ci+1)+' / '+T;
+  document.getElementById('pf').style.width=((ci+1)/T*100)+'%';
+  var L=['A','B','C','D'];
+  var h=q.o.map(function(o,i){
+    return '<div class="opt'+(an[ci]===i?' sel':'')+'" onclick="pick('+i+')">'
+      +'<div class="ol">'+L[i]+'</div><div class="ot">'+o+'</div></div>';
+  }).join('');
+  document.getElementById('qcard').innerHTML=
+    '<div class="qn">Question '+(ci+1)+' of '+T+'</div>'
+    +'<div class="qt">'+q.q+'</div>'
+    +'<div class="opts">'+h+'</div>';
+  document.getElementById('bp').style.display=ci===0?'none':'';
+  document.getElementById('bn').style.display=ci===T-1?'none':'';
+  document.getElementById('bs').style.display=ci===T-1?'':'none';
+  updateNav();
+}
+
+function pick(i){an[ci]=i;renderQ();}
+function mv(d){ci=Math.max(0,Math.min(T-1,ci+d));renderQ();}
+
+function submit(){
+  var u=an.filter(function(x){return x===-1;}).length;
+  if(u>0&&!confirm(u+' question(s) unanswered. Submit anyway?'))return;
+  clearInterval(ti); showResults();
+}
+
+function startTimer(){
+  ti=setInterval(function(){
     sc--;
     var m=Math.floor(sc/60),s=sc%60;
     var el=document.getElementById('tm');
